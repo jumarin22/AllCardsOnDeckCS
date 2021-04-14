@@ -54,7 +54,7 @@ namespace AllCardsOnDeckCS
             {
                 var somePlace = new Random().Next(0, i); // Generate a random number.
 
-                var rightCard = deck[i]; // Copy a card from the end of the List.
+                var rightCard = deck[i]; // Copy the card from the end of the List.
 
                 deck[i] = deck[somePlace]; // Change the card at the end of the List to some other random card to its left. 
 
@@ -62,9 +62,35 @@ namespace AllCardsOnDeckCS
             }
 
             // Display the top two cards.
-            for (int twoCards = 0; twoCards < 2; twoCards++)
+            // Adventure mode... 
+            // In addition to displaying the top two cards, 
+            // also store these two "dealt" cards in a variable named playerHand.
+            // Implement a way to deal cards into two different hands.
+            var playerHand = new List<string>();
+            var playerFoot = new List<string>();
+
+            for (int twoCards = 0; twoCards < 4; twoCards++)
             {
-                Console.WriteLine($"{deck[twoCards]}");
+                Console.WriteLine($"Player One: {deck[twoCards]}");
+                playerHand.Add(deck[twoCards]);
+                twoCards++;
+
+                Console.WriteLine($"Player Two: {deck[twoCards]}");
+                playerFoot.Add(deck[twoCards]);
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Player One's Hand:");
+            foreach (var card in playerHand)
+            {
+                Console.WriteLine(card);
+            }
+
+            Console.WriteLine("Player Two's Hand:");
+            foreach (var card in playerFoot)
+            {
+                Console.WriteLine(card);
             }
         }
     }

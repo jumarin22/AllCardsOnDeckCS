@@ -69,6 +69,7 @@ namespace AllCardsOnDeckCS
             var playerHand = new List<string>();
             var playerFoot = new List<string>();
 
+            // Display cards as dealt. 
             for (int twoCards = 0; twoCards < 4; twoCards++)
             {
                 Console.WriteLine($"Player One: {deck[twoCards]}");
@@ -81,6 +82,7 @@ namespace AllCardsOnDeckCS
 
             Console.WriteLine();
 
+            // Display hands separately. 
             Console.WriteLine("Player One's Hand:");
             foreach (var card in playerHand)
             {

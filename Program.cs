@@ -72,27 +72,56 @@ namespace AllCardsOnDeckCS
             // Display cards as dealt. 
             for (int twoCards = 0; twoCards < 4; twoCards++)
             {
-                Console.WriteLine($"Player One: {deck[twoCards]}");
+                Console.WriteLine($"Player One is dealt: {deck[twoCards]}");
                 playerHand.Add(deck[twoCards]);
                 twoCards++;
 
-                Console.WriteLine($"Player Two: {deck[twoCards]}");
+                Console.WriteLine($"Player Two is dealt: {deck[twoCards]}");
                 playerFoot.Add(deck[twoCards]);
+
+                Console.WriteLine();
             }
+
+            // Epic Mode ... 
+            // ... Implement the game of War
+
+            // Declare  variables for player hand strength.
+            int player1Strength = 0;
+            int player2Strength = 0;
 
             Console.WriteLine();
+            Console.WriteLine("Let's play a (simplified) game of war with these cards!");
 
-            // Display hands separately. 
-            Console.WriteLine("Player One's Hand:");
-            foreach (var card in playerHand)
+            for (int warcard = 0; warcard < 2; warcard++) // Iterate through game.
             {
-                Console.WriteLine(card);
-            }
+                // Detect players' strengths.
+                if (playerHand[warcard].Contains("Ace"))
+                    player1Strength = 14;
+                else if (playerHand[warcard].Contains("King"))
+                    player1Strength = 13;
+                else if (playerHand[warcard].Contains("Queen"))
+                    player1Strength = 12;
+                else if (playerHand[warcard].Contains("Jack"))
+                    player1Strength = 11;
+                else
+                    player1Strength = int.Parse(playerHand[warcard].ToString()[..2]);
 
-            Console.WriteLine("Player Two's Hand:");
-            foreach (var card in playerFoot)
-            {
-                Console.WriteLine(card);
+                if (playerFoot[warcard].Contains("Ace"))
+                    player2Strength = 14;
+                else if (playerFoot[warcard].Contains("King"))
+                    player2Strength = 13;
+                else if (playerFoot[warcard].Contains("Queen"))
+                    player2Strength = 12;
+                else if (playerFoot[warcard].Contains("Jack"))
+                    player2Strength = 11;
+                else
+                    player2Strength = int.Parse(playerFoot[warcard].ToString()[..2]);
+
+                // Judgement.
+                if (player1Strength > player2Strength)
+                    Console.WriteLine($"Player 1's {playerHand[warcard]} beats Player 2's {playerFoot[warcard]}. Player 1 wins!");
+                else
+                    Console.WriteLine($"Player 1's {playerHand[warcard]} loses to Player 2's {playerFoot[warcard]}. Player 2 wins!");
             }
         }
     }

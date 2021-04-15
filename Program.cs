@@ -94,7 +94,7 @@ namespace AllCardsOnDeckCS
             for (int warcard = 0; warcard < 2; warcard++) // Iterate through the game.
             {
                 // Detect players' strengths.
-                if (playerHand[warcard].Contains("Ace"))
+                if (playerHand[warcard].Contains("Ace")) // Detect if face card and assign hand strength. 
                     player1Strength = 14;
                 else if (playerHand[warcard].Contains("King"))
                     player1Strength = 13;
@@ -103,7 +103,7 @@ namespace AllCardsOnDeckCS
                 else if (playerHand[warcard].Contains("Jack"))
                     player1Strength = 11;
                 else
-                    player1Strength = int.Parse(playerHand[warcard].ToString()[..2]);
+                    player1Strength = int.Parse(playerHand[warcard].ToString()[..2]); // Otherwise, parse strength value from string. 
 
                 if (playerFoot[warcard].Contains("Ace"))
                     player2Strength = 14;
@@ -123,7 +123,6 @@ namespace AllCardsOnDeckCS
                     Console.WriteLine($"Player One's {playerHand[warcard]} loses to Player Two's {playerFoot[warcard]}. Player Two wins!");
                 else
                     Console.WriteLine($"Player One's {playerHand[warcard]} is the same value as Player Two's {playerFoot[warcard]}. It's a draw!");
-
             }
         }
     }

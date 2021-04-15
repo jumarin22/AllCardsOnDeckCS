@@ -60,7 +60,7 @@ namespace AllCardsOnDeckCS
 
                 deck[end] = deck[somePlace]; // Change the card at the end of the List to some other random card to its left. 
 
-                deck[somePlace] = copiedCard; // That random card's old spot is now replaced with our copied card.
+                deck[somePlace] = copiedCard; // That random card's old spot is now replaced with our copied card (which was at the end of the deck).
             }
 
             // Display the top two cards.

@@ -25,9 +25,9 @@ namespace AllCardsOnDeckCS
             var suit = new string[] { " of Spades", " of Hearts", " of Clubs", " of Diamonds" };
 
             // Iterate through the suits, concatenating the ranks. Then add the full string to the deck.
-            for (int suitCount = 0; suitCount < 4; suitCount++) // Increment through the 4 suits.
+            for (int suitCount = 0; suitCount < 4; suitCount++) // Iterate through the 4 suits.
             {
-                for (int cardCount = 1; cardCount < 12; cardCount++) // Increment through the ranks.
+                for (int cardCount = 1; cardCount < 12; cardCount++) // Iterate through the ranks.
                 {
                     if (cardCount == 1) // Make the first card an Ace.
                     {
@@ -52,13 +52,13 @@ namespace AllCardsOnDeckCS
             // Be a cool kid and do the Fisher–Yates shuffle!
             for (var end = numberOfCards - 1; end >= 0; end--) // Start at the end of the List and decrement.
             {
-                var somePlace = new Random().Next(0, end); // Generate a random number.
+                var somePlace = new Random().Next(0, end); // Generate a random number less than end's value.
 
-                var rightCard = deck[end]; // Copy the card from the end of the List.
+                var copiedCard = deck[end]; // Copy the card from the end of the List.
 
                 deck[end] = deck[somePlace]; // Change the card at the end of the List to some other random card to its left. 
 
-                deck[somePlace] = rightCard; // That random card's old spot is now replaced with our copied card.
+                deck[somePlace] = copiedCard; // That random card's old spot is now replaced with our copied card.
             }
 
             // Display the top two cards.
@@ -83,15 +83,15 @@ namespace AllCardsOnDeckCS
             }
 
             // Epic Mode ... 
-            // ... Implement the game of War
+            // ... Implement the game of War.
 
-            // Declare  variables for player hand strength.
+            // Declare variables for player hand strength.
             int player1Strength = 0;
             int player2Strength = 0;
 
             Console.WriteLine("Let's play a (simplified) game of war with these cards!");
 
-            for (int warcard = 0; warcard < 2; warcard++) // Iterate through game.
+            for (int warcard = 0; warcard < 2; warcard++) // Iterate through the game.
             {
                 // Detect players' strengths.
                 if (playerHand[warcard].Contains("Ace"))

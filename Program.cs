@@ -118,11 +118,11 @@ namespace AllCardsOnDeckCS
 
                 // Judgement.
                 if (player1Strength > player2Strength)
-                    Console.WriteLine($"Player 1's {playerHand[warcard]} beats Player 2's {playerFoot[warcard]}. Player 1 wins!");
+                    Console.WriteLine($"Player One's {playerHand[warcard]} beats Player Two's {playerFoot[warcard]}. Player One wins!");
                 else if (player2Strength > player1Strength)
-                    Console.WriteLine($"Player 1's {playerHand[warcard]} loses to Player 2's {playerFoot[warcard]}. Player 2 wins!");
+                    Console.WriteLine($"Player One's {playerHand[warcard]} loses to Player Two's {playerFoot[warcard]}. Player Two wins!");
                 else
-                    Console.WriteLine($"Player 1's {playerHand[warcard]} is the same value as Player 2's {playerFoot[warcard]}. It's a draw!");
+                    Console.WriteLine($"Player One's {playerHand[warcard]} is the same value as Player Two's {playerFoot[warcard]}. It's a draw!");
 
             }
         }

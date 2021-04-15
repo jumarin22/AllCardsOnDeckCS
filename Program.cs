@@ -12,6 +12,8 @@ namespace AllCardsOnDeckCS
             // Creates a new deck of cards.
             // Shuffles deck Fisher–Yates style.
             // Displays the top two cards.
+            // Deals two cards to two players. 
+            // Plays war with cards dealt. 
 
             // The deck contains 52 unique cards.
             // All cards are represented as as a string such as "Ace of Hearts".

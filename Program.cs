@@ -50,13 +50,13 @@ namespace AllCardsOnDeckCS
             var numberOfCards = deck.Count;
 
             // Be a cool kid and do the Fisher–Yates shuffle!
-            for (var i = numberOfCards - 1; i >= 0; i--) // Start at the end of the List and decrement.
+            for (var end = numberOfCards - 1; end >= 0; end--) // Start at the end of the List and decrement.
             {
-                var somePlace = new Random().Next(0, i); // Generate a random number.
+                var somePlace = new Random().Next(0, end); // Generate a random number.
 
-                var rightCard = deck[i]; // Copy the card from the end of the List.
+                var rightCard = deck[end]; // Copy the card from the end of the List.
 
-                deck[i] = deck[somePlace]; // Change the card at the end of the List to some other random card to its left. 
+                deck[end] = deck[somePlace]; // Change the card at the end of the List to some other random card to its left. 
 
                 deck[somePlace] = rightCard; // That random card's old spot is now replaced with our copied card.
             }
@@ -89,7 +89,6 @@ namespace AllCardsOnDeckCS
             int player1Strength = 0;
             int player2Strength = 0;
 
-            Console.WriteLine();
             Console.WriteLine("Let's play a (simplified) game of war with these cards!");
 
             for (int warcard = 0; warcard < 2; warcard++) // Iterate through game.

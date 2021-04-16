@@ -29,17 +29,17 @@ namespace AllCardsOnDeckCS
             // Iterate through the suits, concatenating the ranks. Then add the full string to the deck.
             for (int suitCount = 0; suitCount < 4; suitCount++) // Iterate through the 4 suits.
             {
-                for (int cardCount = 1; cardCount < 12; cardCount++) // Iterate through the ranks.
+                for (int rankCount = 1; rankCount < 12; rankCount++) // Iterate through the ranks.
                 {
-                    if (cardCount == 1) // Make the first card an Ace.
+                    if (rankCount == 1) // Make the first card an Ace.
                     {
                         deck.Add("Ace" + suit[suitCount].ToString());
                     }
-                    else if (cardCount >= 2 && cardCount <= 10) // Make 2-10 their normal values.
+                    else if (rankCount >= 2 && rankCount <= 10) // Make 2-10 their normal values.
                     {
-                        deck.Add(cardCount.ToString() + suit[suitCount].ToString());
+                        deck.Add(rankCount.ToString() + suit[suitCount].ToString());
                     }
-                    else if (cardCount == 11) // Once we reach the face cards, just Add them to the deck.
+                    else if (rankCount == 11) // Once we reach the face cards, just Add them to the deck.
                     {
                         deck.Add("Jack" + suit[suitCount].ToString());
                         deck.Add("Queen" + suit[suitCount].ToString());
@@ -68,6 +68,8 @@ namespace AllCardsOnDeckCS
             // In addition to displaying the top two cards, 
             // also store these two "dealt" cards in a variable named playerHand.
             // Implement a way to deal cards into two different hands.
+
+            // Create two players.
             var playerHand = new List<string>();
             var playerFoot = new List<string>();
 
